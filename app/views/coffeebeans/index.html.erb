@@ -1,0 +1,26 @@
+<h1>Listing coffeebeans</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Place</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @coffeebeans.each do |coffeebean| %>
+  <tr>
+    <td><%= coffeebean.name %></td>
+    <td><%= coffeebean.description %></td>
+    <td><%= coffeebean.place %></td>
+    <td><%= link_to 'Show', coffeebean %></td>
+    <td><%= link_to 'Edit', edit_coffeebean_path(coffeebean) %></td>
+    <td><%= link_to 'Destroy', coffeebean, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Post', new_coffeebean_path %>

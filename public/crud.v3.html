@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <name>Rails Knockout Example: Rahul</name>
+    <link href="/stylesheets/scaffold.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/custom.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="/javascripts/jquery.js" type="text/javascript"></script>
+    <script src="/javascripts/jquery1.tmpl.js" type="text/javascript"></script>
+    <script src="/javascripts/knockout-3.0.0.js" type="text/javascript"></script>
+    <script src="/javascripts/crud.js" type="text/javascript"></script>
+
+
+  </head>
+  <body style="background:#eee;">
+    <div class="mainContainer well">
+      <div class="header">
+        <h1 > CoffeeMeCrazy </h1>
+      </div>
+      <!-- /// 1 -->
+      <script id="errorsTemplate" type="text/html">
+              
+               <span style="color:#ee5f5b;" data-bind="text: $data"></span>.&nbsp;
+            
+      </script>
+      
+      <script id="commentsTemplate" type="text/html">
+        <div class="comment">
+        <img src="images/commentIcon.jpg" style="float:left; width:20px; height:20px;" />
+        <p data-bind="text: content"/></p>
+        <hr style="border-bottom:1px solid #ccc;"/>
+        </div>
+    
+    </script>
+      <!-- /// 2 -->
+      <script id="indexTemplate" type="text/html">
+        
+         <a >
+         <div class="span3 beanHolder" >
+           <div class="beanTitle" >
+              <img src="images/delete.jpg" style="width:12px; height:12px; float:right; margin-top:10px" data-bind="click: function() { viewModel.destroyAction($data) }" />
+               <h4 data-bind="text: name"> </h4>
+
+              
+            </div>
+            <div class="beanTries" data-bind="click: function() { viewModel.showAction($data) }">
+              <div class="row">
+                <div class="span1"><h3 data-bind="text: likes" ></h3></div>
+                <div class="span2 tried"><h4>Tried This</h4></div>
+              </div>
+            </div>
+            <div class="beanLocation" data-bind="click: function() { viewModel.showAction($data) }">
+              <div class="row">
+                <div class="span1"> <img class="imgSmall" src="images/location.jpg" /></div>
+                <div class="span2 loc"><h4 data-bind="text: place"></h4></div>
+              </div>
+            </div>
+        </div>
+        </a>
+        
+      </script>
+
+      <!-- /// 5 -->
+      <script id="showTemplate" type="text/html">
+        <div class="beanShow"  >
+          <img src="images/back.png" data-bind="click: function() { viewModel.indexAction() }" />
+          <div style="margin-bottom:10px;" class="row" >
+            <div class="imgHolder span3" >
+              <img class="imgMedium" src="images/coffeebg.jpg" />
+            </div>
+            <div class="beanDesc span5" >
+                <div data-bind="click: function() { viewModel.editAction($data) }" name="Click to Edit">
+                  <h2><span data-bind="text: name"></span></h2>
+                  <p><span data-bind="text: description"></span></p>
+                  <div class="">
+                    <div class="row">
+                        <div class="row span3">
+                          <div class="span1"> <img class="imgSmall" src="images/location.jpg" /></div>
+                          <div class="span2 loc"><h4 data-bind="text: place"></h4></div>
+                        </div>
+                        <div class="span2" style="margin-top:10px;">
+                          <b><span class="tries" data-bind="text: likes"></span> </b><span>Tried This</span>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+               <button class="btn btn-info" data-bind="click: function() { viewModel.tryAction($data) }">I Have Tried </button>
+              
+            </div>
+          
+          </div>
+      
+            <div class="commentHolder span8">
+              <div class="comment">
+                <form id="form">
+                  <div>
+                    
+                      <input type="text" id="comment_content" data-bind="value: viewModel.newcontent"  placeholder="Write Your Comment"/>
+                    </form>
+                     <button class="btn btn-success" data-bind="click: function() { viewModel.addComment() }"> Add comment </button>
+                  </div>
+              </div>
+            </div>  
+
+      </script>
+
+      <!-- /// 7 -->
+      <script id="editTemplate" type="text/html">
+        <div class="newBean beanHolder">
+          <form id="form">
+          
+            <div>
+              <label for="post_name">Coffee Bean</label><br />
+              <input type="text" id="post_name" data-bind="value: name" />
+
+            </div>
+
+            <div>
+              <label for="post_body">Description</label><br />
+              <textarea id="post_body" data-bind="value: description" ></textarea>
+            </div>
+            <div>
+              <label for="post_place">Location</label><br />
+              <input type="text" id="post_place" data-bind="value: place" />
+            </div>
+          </form>
+          
+
+          <div>
+            <button class="btn btn-info" data-bind="click: function() { viewModel.updateAction($data) }">Update
+            </button>
+            <a data-bind="click: function() { viewModel.showAction($item.selectedItem()) }"><button class="btn" >Cancel</button></a>
+          </div>
+        </div>
+         
+      </script>
+
+      <!-- /// 8 -->
+      <script id="newTemplate" type="text/html">
+          <div class="newBean beanHolder">
+          <form id="form">
+          
+            <div>
+              <label for="post_name">Coffee Bean</label><br />
+              <input type="text" id="post_name" data-bind="value: name" />
+
+            </div>
+
+            <div>
+              <label for="post_body">Description</label><br />
+              <textarea id="post_body" data-bind="value: description" ></textarea>
+            </div>
+            <div>
+              <label for="post_place">Location</label><br />
+              <input type="text" id="post_place" data-bind="value: place" />
+            </div>
+          </form>
+          
+
+          <div>
+            <button class="btn btn-info" data-bind="click: function() { viewModel.createAction($data) }">Create
+            </button>
+            <a data-bind="click: function() { viewModel.indexAction() }"><button class="btn" >Cancel</button></a>
+          </div>
+        </div>
+      </script>
+
+
+      <!-- /// 9 -->
+      
+      <div  data-bind='template: {name: "errorsTemplate", foreach: errors}'></div>
+      <!-- /// 10 -->
+      <div class="mesg" data-bind='visible: flash'>
+          <p data-bind='text: flash'></p>
+      </div>
+      <!-- /// 11 -->
+      <div data-bind='visible: currentPage() == "index"'>
+        <a data-bind='click: function() { viewModel.newAction() }'><button style="margin-top:20px;" class="btn btn-info"> Add Coffee Bean</button></a>
+        <input style="float:right; margin-top:20px;" type="text" class="search" data-bind="value :filter, valueUpdate: 'afterkeydown'" placeholder="Type to Search"/>
+        <br />
+        
+        <table>
+          <div class="row">
+
+         <tbody data-bind='template: {name: "indexTemplate", foreach: filteredItems}'></tbody>
+          </div>
+       </table>
+        
+      </div>
+
+      <!-- /// 12 -->
+      <div data-bind='visible: currentPage() == "show"'>
+        <div data-bind='template: {name: "showTemplate",  data: tempItem, templateOptions: { selectedItem: selectedItem}}'></div>
+         <div class="commentHolder" data-bind='template: {name: "commentsTemplate", foreach: comments}'></div>
+      </div>
+       
+      <!-- /// 13 -->
+      <div data-bind='visible: currentPage() == "edit"'>
+        <div data-bind='template: {name: "editTemplate", data: tempItem, templateOptions: { selectedItem: selectedItem}}'></div>
+      </div>
+
+      <!-- /// 14 -->
+      <div data-bind='visible: currentPage() == "new"'>
+        <div data-bind='template: {name: "newTemplate", data: tempItem}'></div>
+      </div>
+    </div>  
+  </body>
+</html>

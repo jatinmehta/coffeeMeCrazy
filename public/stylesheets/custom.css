@@ -1,0 +1,401 @@
+.header {
+	background: #000;
+	margin-top: 0px;
+	margin-left: 0px;
+	width:auto;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+	color:#fff;
+	text-align: center;
+	background-color: #49afcd;
+	background-image: -moz-linear-gradient(top, #000, #222);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#000), to(#222));
+	background-image: -webkit-linear-gradient(top, #000, #222);
+	background-image: -o-linear-gradient(top, #000, #222);
+	background-image: linear-gradient(to bottom, #000, #222);
+	background-repeat: repeat-x;
+	border-color: #222 #222 #1f6377;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+.mainContainer {
+	margin-top:0px;
+	margin-right: auto;
+	margin-left: auto;
+	width: 950px;
+	background: #ffe;
+
+	
+}
+
+.beanHolder {
+	margin-top: 10px;
+	margin-left:40px;
+	margin:right;
+	width:840px;
+	
+	overflow: hidden;
+	padding: 1px;
+	text-align: left;
+	white-space: normal;
+	background-color: #ffffff;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+}
+
+.beanLabel {
+	background: #555;
+	color: #fff;
+}
+
+.beanHolder span {
+	height:40px;
+}
+
+.beanHolder h1,h2,h3,h4 {
+	color:#444;
+}
+
+.head {
+	font-size: 20px;
+	padding: 2px;
+	margin-top:5px;
+	margin-bottom: 5px;
+}
+
+.beanName {
+	font-size:15px;
+	margin-top:10px;	
+	color:#444;
+}
+
+.likes {
+	font-size:18px;
+	margin-left: 40px;
+	margin-top:7px;
+}
+
+.location {
+	margin-top:7px;
+	font-size: 17px;
+	color:#444;
+}
+
+.actions {
+	margin-top:5px;
+	margin-right:20px;
+}
+
+.beanTitle {
+	padding: 2px 14px;
+	margin: 0;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 18px;
+	background-color: #f7f7f7;
+	border-bottom: 1px solid #ebebeb;
+	-webkit-border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0 0;
+}
+
+.beanTries {
+	padding: 1px 14px;
+	background: url('../images/coffeebg.jpg');
+	opacity:0.9;
+	height:90px;
+}
+
+.beanTries h3{
+	color:#fff;
+	margin-top:25px;
+}
+.beanTries h4 {
+	color:#fff;
+	margin-top:25px;
+}
+.beanLocation {
+	padding: 2px 0px;
+	margin: 0;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 18px;
+	background-color: #f7f7f7;
+	border-bottom: 1px solid #ebebeb;
+	-webkit-border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0 0;
+}
+
+.imgSmall {
+	width:20px; 
+	height:20px;
+	margin-left:0px; 
+}
+
+.loc {
+	margin-left: -20px;
+	
+}
+
+.tried {
+	margin-left: -25px;
+	margin-top:10px;
+}
+
+.addBean {
+	margin-right: auto;
+	margin-left:auto;
+	margin-top:30px;
+	padding: 2px 14px;
+	width:750px;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 18px;
+	border-bottom: 1px solid #ebebeb;
+	-webkit-border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0 0;
+}
+
+.newBean {
+	margin-right: auto;
+	margin-left:auto;
+	margin-top:30px;
+	width:400px;
+	padding: 2px 14px;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 18px;
+	background-color: #f7f7f7;
+	border-bottom: 1px solid #ebebeb;
+	-webkit-border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0 0;
+}
+
+.newBean label, .editBean label {
+	margin-top:14px;
+	margin-bottom: -7px;
+	margin-left: 10px;
+	font-weight: normal;
+	color:#444;
+	font-size: 20px;
+}
+
+.newBean input, .editBean input{
+	width:360px;
+	height:30px;
+	margin-top:0px;
+	margin-left: 10px;
+	color:#444;
+	background-color: #ffe;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+}
+
+.newBean textarea, .editBean textarea {
+
+	width:360px;
+	max-width: 360px;
+	height:110px;
+	margin-top:0px;
+	margin-left: 10px;
+	color:#444;
+	background-color: #ffe;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;	
+}
+
+.newBean button {
+	margin:10px;
+	margin-top: 0px;
+}
+
+.beanShow {
+	margin-top:10px;
+	margin-left:auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+	padding: 1px;
+	text-align: left;
+	white-space: normal;
+	background-color: #f7f7f7;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+}
+
+.imgHolder {
+	margin-top:20px;
+	margin-left:55px;
+}
+
+.imgMedium {
+	width: 220px;
+	height: 124px;
+	padding:3px;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+}
+
+.beanDesc {
+	margin-top: 20px;
+	text-align: justify;
+	margin-right: 20px;
+}
+
+.beanDesc h2, p, h5 {
+	margin-left: 35px;
+
+}
+
+.beanDesc p{
+	font-size: 15px;
+}
+
+
+.beanDesc button {
+	float:right;
+	margin-top:10px;
+}
+
+.tries {
+	font-size: 18px;
+	margin-top:30px;
+}
+
+.commentHolder {
+	margin-top:10px;
+	margin-left:auto;
+	margin-right: auto;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+}
+
+.comment {
+
+	padding:4px;
+	font-size: 18px;
+	background: #f7f7f7;	
+	overflow: hidden;
+	border-bottom: 1px solid #ccc;
+}
+
+
+
+.comment p {
+	margin-top:5px;
+	font-size: 15px;
+	font-family: cursive;
+}
+
+.comment img {
+	margin:5px;
+	margin-top:5px;
+}
+
+.mesg {
+	margin-top:10px;
+	height:40px;
+	color:#62c462;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	
+}
+.mesg p {
+	padding:4px;
+	margin-left: 20px;
+	margin-top:5px;
+	font-size: 15px;
+	
+}
+
+.comment input {
+	height:25px;
+	background:#ffe;
+	margin-left:20px;
+	margin-right:20px;
+	margin-top:10px;
+}
+
+
+.newBean {
+	margin-left:40px;
+	width:820px;
+}
+
+.editBean {
+	margin-right: auto;
+	margin-left:auto;
+	margin-top:30px;
+	width:400px;
+	padding: 2px 14px;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 18px;
+	background-color: #ffe;
+	border-bottom: 1px solid #ebebeb;
+	-webkit-border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0 0;
+}
