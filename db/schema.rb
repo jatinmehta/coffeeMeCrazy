@@ -26,17 +26,7 @@ ActiveRecord::Schema.define(:version => 20140107114711) do
     t.integer  "post_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "nickname"
     t.integer  "coffeebean_id"
-  end
-
-  create_table "posts", :force => true do |t|
-    t.string   "title"
-    t.string   "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "country"
-    t.integer  "likes",      :default => 0
   end
 
   create_table "sessions", :force => true do |t|
