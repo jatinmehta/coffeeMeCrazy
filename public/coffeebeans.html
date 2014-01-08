@@ -214,9 +214,10 @@
                             <div>
                             <input type="text" class="span6" data-bind="value: newcontent"  placeholder="Write Your Comment...." />
                                
-                              </form>
-                               <button class="btn btn-success" data-bind="visible: false, click: function() { viewModel.addComment() }"> Comment </button>
+                              
+                               <button class="btn btn-success" data-bind="click: function() { viewModel.addComment() }"> Comment </button>
                             </div>
+                            </form>
                         </div>
                     </div>
                     <div class="commentHolder" data-bind='template: {name: "commentsTemplate", foreach: comments}'>
