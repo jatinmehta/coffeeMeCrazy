@@ -88,7 +88,7 @@ var viewModel = {
     $.getJSON(url, function(data) {
       viewModel.comments(data);
     });
-    this.pageToDisplay('show');
+    this.pageToDisplay('display');
     this.shownOnce(true);
     this.tempBeanId(beanToShow.id);
   },
