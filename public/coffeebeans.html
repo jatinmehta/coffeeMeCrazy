@@ -18,23 +18,8 @@
       </div>
  
     <div class="mainContainer well">
-      <!-- /// 1 -->
-      <script id="errorsTemplate" type="text/html">
-              
-               <span style="color:#ee5f5b;" data-bind="text: $data"></span>.&nbsp;
-            
-      </script>
       
-      <script id="commentsTemplate" type="text/html">
-        <div class="comment">
-          <img src="images/commentIcon.jpg" style="float:left; width:20px; height:20px;" />
-          <p data-bind="text: content"/></p>
-          
-        </div>
-    
-    </script>
-      <!-- /// 2 -->
-      <script id="indexTemplate" type="text/html">
+      <script id="indexView" type="text/html">
         
         <div class="beanHolder" >
           <div class=="row beanname">
@@ -55,55 +40,19 @@
             </div>
             <div class="span2 actions" style="float:right;">
 
-                <img src="images/delete.jpg" class="imgSmall" style=" float:right; margin-right:20px;" data-bind="click: function() { viewModel.destroyBean($data) }" />
+                <img src="images/delete.jpg" class="imgSmall" style=" float:right; margin-right:20px;" data-bind="click: function() { viewModel.beanDelete($data) }" />
               <span style="float:right; margin-right:20px;" data-bind
               ="click: function() { viewModel.editBean($data) }"><img src="images/editIcon.jpg" class="imgSmall" name="Edit Bean"/ ></span>
                <span style="float:right; margin-right:20px;" data-bind
-              ="click: function() { viewModel.showBean($data) }" name="Show Details" ><img src="images/show.jpg" class="imgSmall"/></span>
+              ="click: function() { viewModel.beanDisplay($data) }" name="Show Details" ><img src="images/show.jpg" class="imgSmall"/></span>
             </div>
           </div>  
         
         
       </script>
 
-      
-      <script id="showTemplate" type="text/html">
-        <div class="beanShow"  >
-          <img src="images/back.jpg" class="imgSmall" data-bind="click: function() { viewModel.indexBean() }" name="Go Back"/>
-
-          <div style="margin-bottom:10px;" class="row" >
-            <div class="imgHolder" >
-              <img class="imgMedium" src="images/coffeebg.jpg" />
-            </div>
-            <div class="beanDesc" >
-                <div data-bind="click: function() { viewModel.editBean($data) }" name="Click to Edit">
-                  <h2><span data-bind="text: name"></span></h2>
-                  <p><span data-bind="text: description"></span></p>
-                  <div class="">
-                    <div class="row">
-                        <div class="row span4">
-                          <h5><img class="imgSmall" src="images/map.jpg" />
-                          <span data-bind="text: place"></span></h5>
-                        </div>
-                        
-                    </div>
-                    
-                  </div>
-                </div>
-            <div class="span4" style="margin-top:10px;">
-                          <b style="margin-left:20px;"><span class="tries" data-bind="text: likes"></span> </b><span><img class="imgSmall" style="margin-left:0px;" src="images/try.jpg"/> </span>
-                             <button style="margin-right:20px;margin-top:0px;" class="btn btn-warning" data-bind="click: function() { viewModel.tryBean($data) }">Love It</button>
-                    </div>
-              
-            </div>
-          
-          </div>
-       
-
-      </script>
-
-      <!-- /// 7 -->
-      <script id="editTemplate" type="text/html">
+	  
+      <script id="editView" type="text/html">
         <div class="editBean">
           <img src="images/back.jpg" class="imgSmall" data-bind="click: function() { viewModel.indexBean() }" name="Go Back"/>
           <form id="form">
@@ -133,24 +82,64 @@
         </div>
          
       </script>
+      
+      <script id="displayView" type="text/html">
+        <div class="beanShow"  >
+          <img src="images/back.jpg" class="imgSmall" data-bind="click: function() { viewModel.indexBean() }" name="Go Back"/>
 
-      <!-- /// 8 -->
-      <script id="newTemplate" type="text/html">
+          <div style="margin-bottom:10px;" class="row" >
+            <div class="imgHolder" >
+              <img class="imgMedium" src="images/coffeebg.jpg" />
+            </div>
+            <div class="beanDesc" >
+                <div data-bind="click: function() { viewModel.editBean($data) }" name="Click to Edit">
+                  <h2><span data-bind="text: name"></span></h2>
+                  <p><span data-bind="text: description"></span></p>
+                  <div class="">
+                    <div class="row">
+                        <div class="row span4">
+                          <h5><img class="imgSmall" src="images/map.jpg" />
+                          <span data-bind="text: place"></span></h5>
+                        </div>
+                        
+                    </div>
+                    
+                  </div>
+                </div>
+            <div class="span4" style="margin-top:10px;">
+                          <b style="margin-left:20px;"><span class="tries" data-bind="text: likes"></span> </b><span><img class="imgSmall" style="margin-left:0px;" src="images/try.jpg"/> </span>
+                             <button style="margin-right:20px;margin-top:0px;" class="btn btn-warning" data-bind="click: function() { viewModel.loveBean($data) }">Love It</button>
+                    </div>
+              
+            </div>
+          
+          </div>
+       
 
       </script>
+	  
+	 <script id="commentsView" type="text/html">
+        <div class="comment">
+          <img src="images/commentIcon.jpg" style="float:left; width:20px; height:20px;" />
+          <p data-bind="text: content"/></p>
+          
+        </div>
+    
+    </script>
 
-
-      <!-- /// 9 -->
+  <script id="errorsView" type="text/html">
+		<span style="color:#ee5f5b;" data-bind="text: $data"></span>.&nbsp;
+  </script>
+  
+      <div  data-bind='template: {name: "errorsView", foreach: errors}'></div>
       
-      <div  data-bind='template: {name: "errorsTemplate", foreach: errors}'></div>
-      <!-- /// 10 -->
-      <div class="mesg" data-bind='visible: flash'>
-          <p data-bind='text: flash'></p>
+      <div class="mesg" data-bind='visible: successMsg'>
+          <p data-bind='text: successMsg'></p>
       </div>
-      <!-- /// 11 -->
-      <div data-bind='visible: currentPage() == "index"'>
+      
+      <div data-bind='visible: pageToDisplay() == "index"'>
        
-     <input style="float:right; margin-top:20px;" type="text" class="search-query" data-bind="value :filter, valueUpdate: 'afterkeydown'" placeholder="Search..."/>
+     <input style="float:right; margin-top:20px;" type="text" class="search-query" data-bind="value :filterBeans, valueUpdate: 'afterkeydown'" placeholder="Search..."/>
         <br /><br/>
         <br/>
         <div class="beanHolder beanLabel" >
@@ -175,44 +164,50 @@
         <table>
           <div class="">
 
-         <tbody data-bind='template: {name: "indexTemplate", foreach: filteredItems}'></tbody>
+         <tbody data-bind='template: {name: "indexView", foreach: filteredBeans}'></tbody>
          </div>
      
           </div>
 
        </table>
      </div>
-      <div class="addBean">
+		<div class="addBean">
                 <form id="form" >
                   <div class="row">
                       <div class="span4">
-                          <input type="text" class="span4" data-bind="value: viewModel.tempName"  placeholder="Coffee bean"/>
+                          <input type="text" class="span4" data-bind="value: viewModel.tempBeanName"  placeholder="Coffee bean"/>
 
-                      <input type="text"  class="span4" data-bind="value: viewModel.tempPlace"  placeholder="Location"/>
+                      <input type="text"  class="span4" data-bind="value: viewModel.tempBeanPlace"  placeholder="Location"/>
                       <button class="btn btn-inverse" data-bind="click: function() { viewModel.addBean() }"> Add Bean </button>
                       </div>
                       <div class="span5">
-                        <textarea type="text" class="span5" rows="4"  data-bind="value: viewModel.tempDescription"  placeholder="Write Description Here..."></textarea>                      
+                        <textarea type="text" class="span5" rows="4"  data-bind="value: viewModel.tempBeanDesc"  placeholder="Write Description Here..."></textarea>                      
                       </div>
                   </div>
-                </div>
-                      
-                    </form>
+				</form>
+		</div>
+                
                      
       </div>
 
-      <!-- /// 12 -->
-      <div data-bind='visible: currentPage() == "show"'>
+	  
+      <div data-bind='visible: pageToDisplay() == "edit"'>
+  
+              <div data-bind='template: {name: "editView", data: tempItem, templateOptions: { selectedItem: selectedItem}}'></div>    
+        
+      </div>
+	  
+      <div data-bind='visible: pageToDisplay() == "display"'>
           <div class="row container">
               <div class="span4">
-                <div data-bind='template: {name: "showTemplate",  data: tempItem, templateOptions: { selectedItem: selectedItem}}'></div>
+                <div data-bind='template: {name: "displayView",  data: tempItem, templateOptions: { selectedItem: selectedItem}}'></div>
               </div>
               <div class="span7">
                     <div class="commentHolder">
                         <div class="comment">
                           <form id="form" >
                             <div>
-                            <input type="text" class="span6" data-bind="value: newcontent"  placeholder="Write Your Comment...." />
+                            <input type="text" class="span6" data-bind="value: newCommentText"  placeholder="Write Your Comment...." />
                                
                               
                                <button class="btn btn-success" data-bind="click: function() { viewModel.addComment() }"> Comment </button>
@@ -220,24 +215,13 @@
                             </form>
                         </div>
                     </div>
-                    <div class="commentHolder" data-bind='template: {name: "commentsTemplate", foreach: comments}'>
+                    <div class="commentHolder" data-bind='template: {name: "commentsView", foreach: comments}'>
                     </div>
               </div>        
           </div>
       </div>
       
-       
-      <!-- /// 13 -->
-      <div data-bind='visible: currentPage() == "edit"'>
-  
-              <div data-bind='template: {name: "editTemplate", data: tempItem, templateOptions: { selectedItem: selectedItem}}'></div>    
-        
-      </div>
 
-      <!-- /// 14 -->
-      <div data-bind='visible: currentPage() == "new"'>
-        <div data-bind='template: {name: "newTemplate", data: tempItem}'></div>
-      </div>
     </div>  
   </body>
 </html>
